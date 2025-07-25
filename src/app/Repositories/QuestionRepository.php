@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Question;
+use Illuminate\Database\Eloquent\Collection;
 
 class QuestionRepository
 {
@@ -13,7 +14,7 @@ class QuestionRepository
         $this->model = $model;
     }
 
-    public function all()
+    public function all(): Collection
     {
         return $this->model->with('options')->get();
     }

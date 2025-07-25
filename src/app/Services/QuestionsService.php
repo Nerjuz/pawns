@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\QuestionRepository;
+use Illuminate\Database\Eloquent\Collection;
 
 class QuestionsService
 {
@@ -10,7 +11,7 @@ class QuestionsService
     {
     }
 
-    public function getQuestions()
+    public function getQuestions(): Collection
     {
         return $this->questionRepository->all();
     }
